@@ -9,18 +9,18 @@ interface WarMapProps {
   onSelect: (asset: DistressAsset) => void;
 }
 
-// CartoDB "Dark Matter" raster tiles via a vector-spec raster source.
-// No API key needed; tile subdomains load from a, b, c, d.
-const DARK_STYLE: maplibregl.StyleSpecification = {
+// CartoDB "Voyager" raster tiles - a colorful, readable basemap with
+// labels, water, roads, and landcover in natural tones. No API key needed.
+const BASE_STYLE: maplibregl.StyleSpecification = {
   version: 8,
   sources: {
-    "carto-dark": {
+    "carto-voyager": {
       type: "raster",
       tiles: [
-        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
-        "https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
-        "https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
-        "https://d.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
+        "https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png",
+        "https://b.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png",
+        "https://c.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png",
+        "https://d.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png",
       ],
       tileSize: 256,
       attribution:
@@ -29,13 +29,9 @@ const DARK_STYLE: maplibregl.StyleSpecification = {
   },
   layers: [
     {
-      id: "carto-dark",
+      id: "carto-voyager",
       type: "raster",
-      source: "carto-dark",
-      paint: {
-        "raster-brightness-max": 0.85,
-        "raster-saturation": -0.2,
-      },
+      source: "carto-voyager",
     },
   ],
 };
@@ -50,7 +46,7 @@ export function WarMap({ assets, selectedId, onSelect }: WarMapProps) {
     if (!containerRef.current || mapRef.current) return;
     const map = new maplibregl.Map({
       container: containerRef.current,
-      style: DARK_STYLE,
+      style: BASE_STYLE,
       center: [-90, 39],
       zoom: 3.2,
       pitch: 35,
