@@ -14,7 +14,7 @@ interface AssetPanelProps {
 export function AssetPanel({ asset, onClose }: AssetPanelProps) {
   if (!asset) {
     return (
-      <aside className="hidden lg:flex h-full w-[420px] shrink-0 flex-col items-center justify-center border-l border-white/5 bg-charcoal-800/40 p-6 text-center">
+      <aside className="h-full w-[380px] shrink-0 flex flex-col items-center justify-center border-l border-white/5 bg-charcoal-800/40 p-6 text-center">
         <Flame className="h-8 w-8 text-slate-600 mb-3" />
         <div className="text-xs uppercase tracking-widest text-slate-500">
           Select an asset to open intel panel
@@ -31,7 +31,7 @@ export function AssetPanel({ asset, onClose }: AssetPanelProps) {
   const scoreClass = severityClass(score);
 
   return (
-    <aside className="flex h-full w-full lg:w-[420px] shrink-0 flex-col border-l border-white/5 bg-charcoal-800/60 backdrop-blur-md animate-fadeIn">
+    <aside className="flex h-full w-[380px] shrink-0 flex-col border-l border-white/5 bg-charcoal-800/60 backdrop-blur-md animate-fadeIn">
       <header className="flex items-start justify-between gap-3 border-b border-white/5 px-5 py-4">
         <div className="min-w-0">
           <div className="flex items-center gap-2 mb-1">

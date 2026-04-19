@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
-@import "mapbox-gl/dist/mapbox-gl.css";
+@import "maplibre-gl/dist/maplibre-gl.css";
 
 @tailwind base;
 @tailwind components;
@@ -42,9 +42,9 @@ body {
   background: #2a313b;
 }
 
-/* Mapbox overrides to match dark-institutional theme */
-.mapboxgl-popup-content {
-  background: rgba(17, 20, 24, 0.92) !important;
+/* MapLibre overrides to match dark-institutional theme */
+.maplibregl-popup-content {
+  background: rgba(17, 20, 24, 0.94) !important;
   color: #f3f4f6 !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 10px !important;
@@ -52,13 +52,28 @@ body {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55) !important;
   font-size: 12px !important;
 }
-.mapboxgl-popup-tip {
-  border-top-color: rgba(17, 20, 24, 0.92) !important;
-  border-bottom-color: rgba(17, 20, 24, 0.92) !important;
+.maplibregl-popup-tip {
+  border-top-color: rgba(17, 20, 24, 0.94) !important;
+  border-bottom-color: rgba(17, 20, 24, 0.94) !important;
 }
-.mapboxgl-ctrl-attrib,
-.mapboxgl-ctrl-logo {
-  filter: grayscale(1) opacity(0.45);
+.maplibregl-ctrl-attrib,
+.maplibregl-ctrl-attrib-inner,
+.maplibregl-ctrl-attrib a {
+  background: rgba(17, 20, 24, 0.6) !important;
+  color: #6b7280 !important;
+  font-size: 10px !important;
+}
+.maplibregl-ctrl-group {
+  background: rgba(17, 20, 24, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+}
+.maplibregl-ctrl-group button {
+  background-color: transparent !important;
+  filter: invert(1) hue-rotate(180deg);
+}
+.maplibregl-ctrl-group button:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
 }
 
 @keyframes sp-ring {
