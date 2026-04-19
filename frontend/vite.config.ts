@@ -18,4 +18,20 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    target: "es2022",
+    chunkSizeWarningLimit: 900,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("mapbox-gl")) return "mapbox";
+            if (id.includes("recharts") || id.includes("d3-")) return "recharts";
+            if (id.includes("react-dom") || id.includes("/react/")) return "react";
+          }
+          return undefined;
+        },
+      },
+    },
+  },
 });
