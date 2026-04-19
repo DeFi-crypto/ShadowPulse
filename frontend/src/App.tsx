@@ -55,8 +55,6 @@ export function App() {
     return data.assets.find((a) => a.asset_id === selectedId) ?? null;
   }, [data, selectedId]);
 
-  const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
-
   const highCount = (data?.assets ?? []).filter((a) => a.distress_score >= 70).length;
   const mediumCount = (data?.assets ?? []).filter(
     (a) => a.distress_score >= 40 && a.distress_score < 70,
@@ -71,8 +69,17 @@ export function App() {
         source={data?.source ?? "mock"}
       />
 
+      <div className="border-b border-white/5 bg-charcoal-900/80 px-4 py-2.5 backdrop-blur">
+        <Filters
+          maturity={filters.maturity}
+          category={filters.category}
+          minScore={filters.minScore}
+          onChange={(next) => setFilters(next)}
+        />
+      </div>
+
       <div className="flex min-h-0 flex-1">
-        <div className="hidden w-[320px] shrink-0 border-r border-white/5 bg-charcoal-800/40 md:flex">
+        <div className="hidden w-[300px] shrink-0 border-r border-white/5 bg-charcoal-800/40 xl:flex">
           <AssetList
             assets={data?.assets ?? []}
             selectedId={selectedId}
@@ -81,28 +88,21 @@ export function App() {
         </div>
 
         <main className="relative flex min-w-0 flex-1 flex-col">
-          <div className="absolute top-4 left-4 right-4 z-10">
-            <Filters
-              maturity={filters.maturity}
-              category={filters.category}
-              minScore={filters.minScore}
-              onChange={(next) => setFilters(next)}
-            />
-          </div>
           <div className="relative flex-1">
             <WarMap
               assets={data?.assets ?? []}
               selectedId={selectedId}
               onSelect={(a) => setSelectedId(a.asset_id)}
-              mapboxToken={mapboxToken}
             />
             {loading && <LoadingOverlay />}
             {error && <ErrorOverlay message={error} />}
+            <Legend />
           </div>
-          <Legend />
         </main>
 
-        <AssetPanel asset={selected} onClose={() => setSelectedId(null)} />
+        <div className="hidden lg:flex">
+          <AssetPanel asset={selected} onClose={() => setSelectedId(null)} />
+        </div>
       </div>
     </div>
   );
@@ -130,7 +130,7 @@ function Header({
             <span className="font-display text-lg font-semibold tracking-tight">
               ShadowPulse
             </span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
+            <span className="hidden sm:inline text-[10px] font-mono uppercase tracking-widest text-slate-500">
               CRE Distress Monitor
             </span>
           </div>
@@ -143,7 +143,7 @@ function Header({
         </Badge>
         <Badge tone="yellow">
           <Crosshair className="h-3 w-3" />
-          {mediumCount} MEDIUM
+          {mediumCount} MED
         </Badge>
         <Badge tone="slate">{total} Assets</Badge>
         <Badge tone={source === "live" ? "green" : "blue"}>
@@ -156,7 +156,7 @@ function Header({
 
 function Legend() {
   return (
-    <div className="pointer-events-none absolute bottom-4 left-4 z-10 rounded-lg border border-white/5 bg-charcoal-800/70 px-3 py-2 text-[10px] font-mono uppercase tracking-wider text-slate-400 backdrop-blur">
+    <div className="pointer-events-none absolute bottom-4 left-4 z-10 rounded-lg border border-white/5 bg-charcoal-800/80 px-3 py-2 text-[10px] font-mono uppercase tracking-wider text-slate-400 backdrop-blur">
       <div className="mb-1 text-slate-500">Pulse Severity</div>
       <div className="flex items-center gap-3">
         <LegendDot color="#FF3B30" label="≥70 High" />

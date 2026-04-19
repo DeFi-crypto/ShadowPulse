@@ -4,6 +4,9 @@
 four live "Pulse" signals into a single 0–100 Distress Score and renders
 them on a dark-institutional 3D War Map.
 
+**Live:** <https://shadowpulse-frontend.vercel.app> · API at
+<https://shadowpulse-backend.vercel.app/api/health>.
+
 - **Backend** · FastAPI, async signal fan-out, weighted scoring,
   mock-fallback everywhere. See [`backend/README.md`](backend/README.md).
 - **Frontend** · React + TypeScript + Tailwind + Shadcn-style primitives

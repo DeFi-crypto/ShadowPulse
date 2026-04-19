@@ -27,7 +27,7 @@ const CATEGORIES: Array<{ label: string; value: DistressCategory | null }> = [
 
 export function Filters({ maturity, category, minScore, onChange }: FiltersProps) {
   return (
-    <div className="flex flex-wrap items-center gap-4 rounded-xl border border-white/5 bg-charcoal-800/60 backdrop-blur-md px-4 py-3">
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-lg border border-white/5 bg-charcoal-800/50 px-3 py-2 backdrop-blur">
       <Group label="Debt Maturity">
         {MATURITIES.map((m) => (
           <Button
@@ -83,5 +83,5 @@ function Group({ label, children }: { label: string; children: React.ReactNode }
 }
 
 function Divider() {
-  return <span className="h-5 w-px bg-white/5" />;
+  return <span className="hidden sm:inline h-5 w-px bg-white/10" />;
 }
