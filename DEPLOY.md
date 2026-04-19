@@ -1,23 +1,85 @@
 # Deploying ShadowPulse
 
+**Live deployment (Vercel):**
+- Frontend: <https://shadowpulse-frontend.vercel.app>
+- Backend:  <https://shadowpulse-backend.vercel.app/api/health>
+
 ShadowPulse ships with production configs for every major push-to-deploy
 platform. Pick whichever pairing you prefer — **backend** is a FastAPI
-Docker image, **frontend** is a Vite static build that can be served by
-any CDN or an `nginx` container.
+Docker image (or a Vercel Python serverless function), **frontend** is a
+Vite static build that can be served by any CDN or an `nginx` container.
 
 | Platform | Backend | Frontend | Config |
 |----------|---------|----------|--------|
+| Vercel (current live deploy) | ✅ | ✅ | [`backend/vercel.json`](./backend/vercel.json), [`frontend/vercel.json`](./frontend/vercel.json) |
 | Docker Compose (single VPS) | ✅ | ✅ | [`docker-compose.yml`](./docker-compose.yml) |
 | Fly.io | ✅ | — | [`fly.toml`](./fly.toml) |
 | Render | ✅ | ✅ | [`render.yaml`](./render.yaml) |
 | Railway | ✅ | — | [`railway.toml`](./railway.toml) |
-| Vercel | — | ✅ | [`frontend/vercel.json`](./frontend/vercel.json) |
 | Netlify | — | ✅ | [`netlify.toml`](./netlify.toml) |
 | GitHub Container Registry | ✅ | ✅ | [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) |
 
 ---
 
-## Option A · One-click Render (recommended for first deploy)
+## Option A · Vercel (currently deployed)
+
+Both services live on Vercel under the `veerajs-projects-e879d9ba` team.
+The backend runs as a `@vercel/python` serverless function that re-exports
+the FastAPI `app` from `backend/app/main.py`.
+
+### Backend
+
+The `backend/vercel.json` uses the legacy `builds` config so that
+`includeFiles` can bundle the sibling `app/` package with the serverless
+function:
+
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": { "includeFiles": "app/**", "maxLambdaSize": "50mb" }
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "/api/index.py" }]
+}
+```
+
+Deploy from a fresh machine:
+
+```bash
+cd backend
+npx vercel link --project shadowpulse-backend --scope <your-team>
+npx vercel env add OPENAI_API_KEY production      # optional
+npx vercel deploy --prod
+```
+
+Turn off Vercel's default SSO protection so the frontend can reach the API:
+
+```bash
+curl -X PATCH \
+  "https://api.vercel.com/v9/projects/shadowpulse-backend?teamId=<TEAM_ID>" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"ssoProtection": null}'
+```
+
+### Frontend
+
+```bash
+cd frontend
+npx vercel link --project shadowpulse-frontend --scope <your-team>
+echo "https://shadowpulse-backend.vercel.app" | \
+  npx vercel env add VITE_API_BASE production
+npx vercel env add VITE_MAPBOX_TOKEN production   # optional
+npx vercel deploy --prod
+```
+
+---
+
+## Option B · One-click Render
 
 Render reads [`render.yaml`](./render.yaml) and provisions both services
 (`shadowpulse-backend` as a Docker web service + `shadowpulse-frontend`
@@ -39,7 +101,7 @@ preview environments for PRs.
 
 ---
 
-## Option B · Fly.io (backend) + Vercel (frontend)
+## Option C · Fly.io (backend) + Vercel (frontend)
 
 ### 1. Backend → Fly
 
@@ -71,7 +133,7 @@ vars.
 
 ---
 
-## Option C · Railway (single-repo monorepo)
+## Option D · Railway (single-repo monorepo)
 
 ```bash
 brew install railway
@@ -90,7 +152,7 @@ command `npx serve -s dist -l ${PORT}` (or deploy to Vercel/Netlify).
 
 ---
 
-## Option D · Self-host via Docker Compose
+## Option E · Self-host via Docker Compose
 
 Everything in one VPS. Requires Docker 24+ with Compose v2.
 
@@ -119,7 +181,7 @@ Put Caddy / Traefik / Cloudflare in front for TLS.
 
 ---
 
-## Option E · Kubernetes / anywhere Docker runs
+## Option F · Kubernetes / anywhere Docker runs
 
 The CI workflow at `.github/workflows/ci.yml` pushes tagged images to
 GitHub Container Registry on every push to `main`:

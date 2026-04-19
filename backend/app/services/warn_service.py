@@ -90,7 +90,7 @@ class WARNService:
             # State WARN pages vary wildly; we simply scrape <tr> rows and
             # look for an address-like cell. When parsing fails we defer to
             # the fallback fixture.
-            soup = BeautifulSoup(resp.text, "lxml")
+            soup = BeautifulSoup(resp.text, "html.parser")
             # Real parsing left intentionally conservative: if any row
             # cannot be geocoded we skip. This avoids expensive geocoding
             # on every request.
