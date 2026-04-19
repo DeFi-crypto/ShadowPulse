@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.env
+*.egg-info/
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+.cache/
+
+# Editors & OS
+.DS_Store
+.idea/
+.vscode/

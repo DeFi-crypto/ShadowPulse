@@ -1,0 +1,338 @@
+{
+  "generated_at": "2026-04-15T14:00:00Z",
+  "assets": [
+    {
+      "asset_id": "SLG-ONE-VANDERBILT",
+      "address": "One Vanderbilt Ave, New York, NY 10017",
+      "city": "New York",
+      "state": "NY",
+      "lat": 40.7531,
+      "lng": -73.9787,
+      "owner_reit": "SL Green Realty",
+      "ticker": "SLG",
+      "asset_type": "office",
+      "debt_maturity_year": 2027,
+      "distress_category": "financial",
+      "sec_data": {
+        "ticker": "SLG",
+        "filing_date": "2026-02-14",
+        "npl_current": 342000000,
+        "npl_previous": 218000000,
+        "npl_delta_pct": 56.9,
+        "acl_commercial": 78400000,
+        "acl_commercial_previous": 61200000,
+        "top_tenants": [
+          {"name": "TD Bank", "pct_abr": 11.2, "sector": "financial"},
+          {"name": "Carlyle Group", "pct_abr": 8.7, "sector": "financial"},
+          {"name": "KPMG", "pct_abr": 6.1, "sector": "professional_services"},
+          {"name": "Greenberg Traurig", "pct_abr": 4.9, "sector": "legal"},
+          {"name": "McDermott Will & Emery", "pct_abr": 3.4, "sector": "legal"}
+        ],
+        "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SLG"
+      },
+      "warn": {
+        "warn_count": 4,
+        "headlines": [
+          "Meta to cut 320 roles at Midtown office (NY DOL, Mar 2026)",
+          "Morgan Stanley trims 140 positions at 1585 Broadway",
+          "Fitch reduces NYC research staff by 58",
+          "WeWork closes 2 Midtown locations affecting 212 workers"
+        ],
+        "nearest_miles": 0.4
+      },
+      "lien": {
+        "lien_status": "filed",
+        "count": 2,
+        "filings": [
+          "Skanska USA Civil NE - $1.4M mechanic's lien (Feb 2026)",
+          "Atlantic Glass & Mirror - $284K mechanic's lien (Jan 2026)"
+        ]
+      },
+      "sentiment": {
+        "vibe": "cautionary",
+        "score": -0.18,
+        "flagged_reviews": [
+          "Escalators have been broken for 3 weeks, no ETA from building management.",
+          "Reduced hours on weekends, lobby feels half-empty.",
+          "Several tenants quietly subleasing their floors."
+        ],
+        "keywords": ["reduced hours", "broken elevators", "subleasing"]
+      }
+    },
+    {
+      "asset_id": "BXP-399-PARK",
+      "address": "399 Park Avenue, New York, NY 10022",
+      "city": "New York",
+      "state": "NY",
+      "lat": 40.7588,
+      "lng": -73.9712,
+      "owner_reit": "Boston Properties",
+      "ticker": "BXP",
+      "asset_type": "office",
+      "debt_maturity_year": 2026,
+      "distress_category": "financial",
+      "sec_data": {
+        "ticker": "BXP",
+        "filing_date": "2026-02-06",
+        "npl_current": 512000000,
+        "npl_previous": 489000000,
+        "npl_delta_pct": 4.7,
+        "acl_commercial": 112000000,
+        "acl_commercial_previous": 108400000,
+        "top_tenants": [
+          {"name": "Citibank", "pct_abr": 18.4, "sector": "financial"},
+          {"name": "UBS", "pct_abr": 6.2, "sector": "financial"},
+          {"name": "Kirkland & Ellis", "pct_abr": 4.7, "sector": "legal"},
+          {"name": "Point72 Asset Management", "pct_abr": 3.9, "sector": "financial"},
+          {"name": "Havas Worldwide", "pct_abr": 2.8, "sector": "advertising"}
+        ],
+        "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=BXP"
+      },
+      "warn": {
+        "warn_count": 2,
+        "headlines": [
+          "Citigroup to offload 210 mid-office roles in NYC HQ (Apr 2026)",
+          "UBS NYC: 94 planned reductions (Mar 2026)"
+        ],
+        "nearest_miles": 0.3
+      },
+      "lien": {
+        "lien_status": "clear",
+        "count": 0,
+        "filings": []
+      },
+      "sentiment": {
+        "vibe": "neutral",
+        "score": 0.05,
+        "flagged_reviews": [
+          "Lobby renovation taking longer than expected."
+        ],
+        "keywords": []
+      }
+    },
+    {
+      "asset_id": "VNO-PENN1",
+      "address": "1 Penn Plaza, New York, NY 10119",
+      "city": "New York",
+      "state": "NY",
+      "lat": 40.7506,
+      "lng": -73.9934,
+      "owner_reit": "Vornado Realty Trust",
+      "ticker": "VNO",
+      "asset_type": "office",
+      "debt_maturity_year": 2026,
+      "distress_category": "hybrid",
+      "sec_data": {
+        "ticker": "VNO",
+        "filing_date": "2026-02-10",
+        "npl_current": 287000000,
+        "npl_previous": 151000000,
+        "npl_delta_pct": 90.1,
+        "acl_commercial": 64200000,
+        "acl_commercial_previous": 41300000,
+        "top_tenants": [
+          {"name": "Madison Square Garden Entertainment", "pct_abr": 9.1, "sector": "entertainment"},
+          {"name": "Macy's Inc.", "pct_abr": 7.8, "sector": "retail"},
+          {"name": "Facebook / Meta", "pct_abr": 6.5, "sector": "tech"},
+          {"name": "Bloomberg LP", "pct_abr": 5.4, "sector": "media"},
+          {"name": "IBM", "pct_abr": 3.1, "sector": "tech"}
+        ],
+        "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=VNO"
+      },
+      "warn": {
+        "warn_count": 6,
+        "headlines": [
+          "Macy's to shutter Herald Square sub-floor: 412 WARN filed (Mar 2026)",
+          "Meta NYC: 268 additional cuts announced (Feb 2026)",
+          "IBM reorganization impacts 124 Penn Plaza staff",
+          "Madison Square Garden Entertainment trims 88 ops roles",
+          "Foot Locker HQ support: 56 eliminations",
+          "H&M Americas restructuring: 41 roles"
+        ],
+        "nearest_miles": 0.15
+      },
+      "lien": {
+        "lien_status": "filed",
+        "count": 3,
+        "filings": [
+          "Tishman Construction - $3.8M mechanic's lien",
+          "Permasteelisa North America - $912K mechanic's lien",
+          "Five Star Electric - $604K mechanic's lien"
+        ]
+      },
+      "sentiment": {
+        "vibe": "negative",
+        "score": -0.41,
+        "flagged_reviews": [
+          "Going out of business signs everywhere on the plaza level.",
+          "Half the escalators broken, smells like mildew in the concourse.",
+          "Macy's sub-floor already abandoned.",
+          "Reduced hours for all food court vendors."
+        ],
+        "keywords": ["going out of business", "abandoned", "broken elevators", "reduced hours"]
+      }
+    },
+    {
+      "asset_id": "MAC-SANTA-MONICA-PLACE",
+      "address": "395 Santa Monica Pl, Santa Monica, CA 90401",
+      "city": "Santa Monica",
+      "state": "CA",
+      "lat": 34.0158,
+      "lng": -118.4952,
+      "owner_reit": "Macerich",
+      "ticker": "MAC",
+      "asset_type": "retail",
+      "debt_maturity_year": 2027,
+      "distress_category": "operational",
+      "sec_data": {
+        "ticker": "MAC",
+        "filing_date": "2026-02-20",
+        "npl_current": 188000000,
+        "npl_previous": 174000000,
+        "npl_delta_pct": 8.0,
+        "acl_commercial": 41200000,
+        "acl_commercial_previous": 38400000,
+        "top_tenants": [
+          {"name": "Nordstrom", "pct_abr": 12.4, "sector": "retail"},
+          {"name": "Bloomingdale's", "pct_abr": 6.8, "sector": "retail"},
+          {"name": "ArcLight Cinemas", "pct_abr": 4.1, "sector": "entertainment"},
+          {"name": "Tesla Showroom", "pct_abr": 2.9, "sector": "retail"},
+          {"name": "Barnes & Noble", "pct_abr": 2.1, "sector": "retail"}
+        ],
+        "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MAC"
+      },
+      "warn": {
+        "warn_count": 3,
+        "headlines": [
+          "ArcLight Santa Monica: 84 WARN (Feb 2026)",
+          "Nordstrom regional ops cut 62 roles",
+          "Barnes & Noble flagship to close: 34 WARN"
+        ],
+        "nearest_miles": 0.2
+      },
+      "lien": {
+        "lien_status": "pending",
+        "count": 1,
+        "filings": [
+          "Turner Construction - $512K mechanic's lien claim (awaiting adjudication)"
+        ]
+      },
+      "sentiment": {
+        "vibe": "critical",
+        "score": -0.58,
+        "flagged_reviews": [
+          "Third floor completely abandoned, feels like a ghost mall.",
+          "Going out of business sales at 4 different stores.",
+          "Broken elevators on the Nordstrom side for over a month.",
+          "Reduced hours, closes at 7pm on weekdays now."
+        ],
+        "keywords": ["abandoned", "going out of business", "broken elevators", "reduced hours", "closing"]
+      }
+    },
+    {
+      "asset_id": "KRG-EDDY-STREET",
+      "address": "1251 Eddy Street Commons, South Bend, IN 46617",
+      "city": "South Bend",
+      "state": "IN",
+      "lat": 41.6911,
+      "lng": -86.2367,
+      "owner_reit": "Kite Realty Group",
+      "ticker": "KRG",
+      "asset_type": "mixed_use",
+      "debt_maturity_year": 2027,
+      "distress_category": "operational",
+      "sec_data": {
+        "ticker": "KRG",
+        "filing_date": "2026-02-11",
+        "npl_current": 42000000,
+        "npl_previous": 39000000,
+        "npl_delta_pct": 7.7,
+        "acl_commercial": 11200000,
+        "acl_commercial_previous": 10800000,
+        "top_tenants": [
+          {"name": "Hammes Company", "pct_abr": 6.2, "sector": "professional_services"},
+          {"name": "Urban Outfitters", "pct_abr": 4.1, "sector": "retail"},
+          {"name": "Five Guys", "pct_abr": 3.4, "sector": "restaurant"},
+          {"name": "Brothers Bar & Grill", "pct_abr": 2.8, "sector": "restaurant"},
+          {"name": "Chipotle", "pct_abr": 2.1, "sector": "restaurant"}
+        ],
+        "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=KRG"
+      },
+      "warn": {
+        "warn_count": 1,
+        "headlines": [
+          "Urban Outfitters South Bend closure: 28 WARN (Apr 2026)"
+        ],
+        "nearest_miles": 0.1
+      },
+      "lien": {
+        "lien_status": "clear",
+        "count": 0,
+        "filings": []
+      },
+      "sentiment": {
+        "vibe": "neutral",
+        "score": 0.12,
+        "flagged_reviews": [],
+        "keywords": []
+      }
+    },
+    {
+      "asset_id": "SLG-LEXINGTON-245",
+      "address": "245 Park Avenue, New York, NY 10167",
+      "city": "New York",
+      "state": "NY",
+      "lat": 40.7551,
+      "lng": -73.9757,
+      "owner_reit": "SL Green Realty",
+      "ticker": "SLG",
+      "asset_type": "office",
+      "debt_maturity_year": 2026,
+      "distress_category": "financial",
+      "sec_data": {
+        "ticker": "SLG",
+        "filing_date": "2026-02-14",
+        "npl_current": 342000000,
+        "npl_previous": 218000000,
+        "npl_delta_pct": 56.9,
+        "acl_commercial": 78400000,
+        "acl_commercial_previous": 61200000,
+        "top_tenants": [
+          {"name": "Societe Generale", "pct_abr": 14.9, "sector": "financial"},
+          {"name": "Rabobank", "pct_abr": 6.2, "sector": "financial"},
+          {"name": "Houlihan Lokey", "pct_abr": 5.1, "sector": "financial"},
+          {"name": "Major League Baseball", "pct_abr": 4.8, "sector": "entertainment"},
+          {"name": "JPMorgan Chase", "pct_abr": 3.7, "sector": "financial"}
+        ],
+        "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SLG"
+      },
+      "warn": {
+        "warn_count": 5,
+        "headlines": [
+          "Societe Generale NY: 148 WARN (Apr 2026)",
+          "Rabobank US HQ: 72 cuts",
+          "Houlihan Lokey support ops: 41 roles",
+          "MLB admin restructure: 33 positions",
+          "JPMorgan Midtown: 116 affected"
+        ],
+        "nearest_miles": 0.2
+      },
+      "lien": {
+        "lien_status": "filed",
+        "count": 1,
+        "filings": [
+          "Turner Construction - $2.1M mechanic's lien (Feb 2026)"
+        ]
+      },
+      "sentiment": {
+        "vibe": "cautionary",
+        "score": -0.22,
+        "flagged_reviews": [
+          "Broken elevators bank on the 30-45 floors, been 2 weeks.",
+          "Reduced hours at lobby cafe, feels grim."
+        ],
+        "keywords": ["broken elevators", "reduced hours"]
+      }
+    }
+  ]
+}

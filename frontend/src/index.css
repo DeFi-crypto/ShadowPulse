@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "mapbox-gl/dist/mapbox-gl.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0b0e11;
+  color: #e5e7eb;
+  font-family: "Inter", "Space Grotesk", system-ui, -apple-system, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0e11;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f252d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a313b;
+}
+
+/* Mapbox overrides to match dark-institutional theme */
+.mapboxgl-popup-content {
+  background: rgba(17, 20, 24, 0.92) !important;
+  color: #f3f4f6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 10px !important;
+  padding: 10px 12px !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55) !important;
+  font-size: 12px !important;
+}
+.mapboxgl-popup-tip {
+  border-top-color: rgba(17, 20, 24, 0.92) !important;
+  border-bottom-color: rgba(17, 20, 24, 0.92) !important;
+}
+.mapboxgl-ctrl-attrib,
+.mapboxgl-ctrl-logo {
+  filter: grayscale(1) opacity(0.45);
+}
+
+@keyframes sp-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
